@@ -127,7 +127,7 @@ export const Template1 = ({ children }: Template1Props) => {
     },
   ]
 
-  const dataPage: DataPage = titlePage.filter((item) => item.route === router.pathname)[0]
+  const dataPage: DataPage = titlePage.find((item) => item.route === router.pathname) || { route: '/', titleHead: 'Início' };
 
   const hoverBg = tema === '#7e0c11' ? 'bg-[#bdacaa]' : tema === '#329950' ? 'bg-[#9ea8a3]' : 'bg-[#c7d3d4]';
 
@@ -173,7 +173,7 @@ export const Template1 = ({ children }: Template1Props) => {
 
           <div className='cursor-pointer flex justify-center mb-5'>
             <Link href="/perfil" className='flex items-center justify-center gap-2 rounded-[8px] w-full mx-[1px]'>
-              <div className={`transition-all duration-300 flex items-center justify-center gap-2 rounded-[8px] w-full mx-[4px] h-[40px] ${dataPage.route === '/perfil' ? hoverBg : ""} shadow`}>
+              <div className={`transition-all duration-300 flex items-center justify-center gap-2 rounded-[8px] w-full mx-[4px] h-[40px] ${dataPage?.route === '/perfil' ? hoverBg : ""} shadow`}>
                 <div className="relative flex-shrink-0 w-8 h-8">
                   <img
                     className="absolute top-0 left-0 w-full h-full object-cover rounded-full shadow"
@@ -182,7 +182,7 @@ export const Template1 = ({ children }: Template1Props) => {
                   />
                 </div>
 
-                {collapsed ? "" : <span className={`${dataPage.route === '/perfil' ? `text-[${tema}]` : 'text-black'}`}>José Silva</span>}
+                {collapsed ? "" : <span className={`${dataPage?.route === '/perfil' ? `text-[${tema}]` : 'text-black'}`}>José Silva</span>}
               </div>
             </Link>
           </div>
@@ -208,12 +208,12 @@ export const Template1 = ({ children }: Template1Props) => {
           <Content style={{ margin: '0 16px' }}>
             <Breadcrumb
               className='font-semibold'
-              items={dataPage.route === '/' ? [{title: 'Início'}] : [
+              items={dataPage?.route === '/' ? [{title: 'Início'}] : [
                 {
                   title: <Link href="/">Início</Link>,
                 },
                 {
-                  title: dataPage.titleHead,
+                  title: dataPage?.titleHead,
                 },
               ]}
               style={{ margin: '16px 0' }}
