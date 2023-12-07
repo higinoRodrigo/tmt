@@ -130,6 +130,7 @@ export const Template1 = ({ children }: Template1Props) => {
   const dataPage: DataPage = titlePage.find((item) => item.route === router.pathname) || { route: '/', titleHead: 'Início' };
 
   const hoverBg = tema === '#7e0c11' ? 'bg-[#bdacaa]' : tema === '#329950' ? 'bg-[#9ea8a3]' : 'bg-[#c7d3d4]';
+  const colorText = tema === '#7e0c11' ? 'text-[#7e0c11]' : tema === '#329950' ? 'text-[#329950]' : 'text-[#217994]';
 
   return (
     <ProviderAntd theme={{token: {colorPrimary: tema}}}>
@@ -182,7 +183,7 @@ export const Template1 = ({ children }: Template1Props) => {
                   />
                 </div>
 
-                {collapsed ? "" : <span className={`${dataPage?.route === '/perfil' ? `text-[${tema}]` : 'text-black'}`}>José Silva</span>}
+                {collapsed ? "" : <span className={`${dataPage?.route === '/perfil' ? `${colorText} font-semibold` : 'text-black'}`}>José Silva</span>}
               </div>
             </Link>
           </div>
