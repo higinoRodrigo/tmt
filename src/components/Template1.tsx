@@ -46,7 +46,7 @@ export const Template1 = ({ children }: Template1Props) => {
   const [collapsed, setCollapsed] = useState(true);
   const [selectedKeys, setSelectedKeys] = useState([]);
   const {token: { colorBgContainer }} = theme.useToken();
-  const [tema, setTema] = useState('#7e0c11');
+  const [tema, setTema] = useState('#217994');
 
   useEffect(() => {
     setSelectedKeys([router.pathname]);
@@ -219,7 +219,7 @@ export const Template1 = ({ children }: Template1Props) => {
               ]}
               style={{ margin: '16px 0' }}
             />
-            <div className='absolute top-3 right-4 flex flex-row justify-center'>
+            <div className='absolute bottom-3 right-4 flex flex-row justify-center'>
               <span>Temas:</span>
               <button onClick={() => setTema('#7e0c11')} className='w-5 h-5 rounded-full bg-[#7e0c11] mx-2' />
               <button onClick={() => setTema('#329950')} className='w-5 h-5 rounded-full bg-[#329950] mx-2' />
