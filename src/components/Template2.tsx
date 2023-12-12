@@ -160,10 +160,10 @@ export const Template2 = ({ children }: Template1Props) => {
           }}
           className='rounded-b-[32px]'
         >
-          <div className={`md:w-32 flex-shrink-0 w-16 transition-all duration-500`}>
+          <div className={`md:w-36 flex-shrink-0 w-16 transition-all duration-500`}>
             <img
               className="w-full h-full object-cover"
-              src={'/logo.svg'}
+              src={'/logoTmt.png'}
               alt="logo"
             />
           </div>
@@ -276,13 +276,6 @@ export const Template2 = ({ children }: Template1Props) => {
                     <MdOutlineMenuOpen className={`${collapsed ? "text-[22px]" : "text-[20px]"} transition-all duration-500`}/>
                   </div>
                 </div>
-              </div>
-
-              <div className='absolute top-40 right-4 flex flex-row justify-center'>
-                <span>Temas:</span>
-                <button onClick={() => setTema('#7e0c11')} className='w-5 h-5 rounded-full bg-[#7e0c11] mx-2' />
-                <button onClick={() => setTema('#329950')} className='w-5 h-5 rounded-full bg-[#329950] mx-2' />
-                <button onClick={() => setTema('#217994')} className='w-5 h-5 rounded-full bg-[#217994] mx-2' />
               </div>
 
               <div style={{ padding: 24, minHeight: 360, background: colorBgContainer }} className='rounded-lg'>
