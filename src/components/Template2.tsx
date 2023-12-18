@@ -139,7 +139,15 @@ export const Template2 = ({ children }: Template1Props) => {
 
   const dataPage: DataPage = titlePage.find((item) => item.route === router.pathname) || { route: '/', titleHead: 'Início' };
 
+  const unauthenticatedUser = router.pathname === '/login' || router.pathname === '/login/recuperarSenha';
 
+  if(unauthenticatedUser){
+    return (
+      <ProviderAntd theme={{token: {colorPrimary: tema}}}>
+        {children}
+      </ProviderAntd>
+    );
+  }
 
   return (
     <ProviderAntd theme={{token: {colorPrimary: tema}}}>
