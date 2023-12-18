@@ -159,7 +159,7 @@ export const SignIn = () => {
         </div>
 
         <div className="lg:flex hidden flex-1  p-14 pl-0 bg-white rounded-r-lg">
-          <div className="bg-[url('/bg-login3.jpeg')] bg-cover flex-1 rounded-xl" id="backgroundDiv"/>
+          <div className="bg-[url('/bg-login1.jpg')] bg-cover flex-1 rounded-xl" id="backgroundDiv"/>
         </div>
       </div>
     </>

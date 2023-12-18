@@ -110,7 +110,7 @@ export const RecuperarSenhaForm = () => {
 
       <div className="flex flex-row w-screen h-screen p-10 transition-all duration-500 opacity-0" id="backgroundDiv">
         <div className="lg:flex hidden flex-1  p-14 pr-0 bg-white rounded-l-lg transition-all duration-300">
-          <div className="bg-[url('/bg-login4.jpg')] bg-cover flex-1 rounded-xl"/>
+          <div className="bg-[url('/bg-login2.jpg')] bg-cover flex-1 rounded-xl"/>
         </div>
 
         <div className="flex items-center justify-center pb-32 flex-1 bg-white rounded-r-lg">
