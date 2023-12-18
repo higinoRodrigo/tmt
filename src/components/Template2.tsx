@@ -16,6 +16,7 @@ import Head from 'next/head';
 const { Content, Footer, Sider, Header } = Layout;
 import { ConfigProvider as ProviderAntd } from "antd";
 import { IoExitOutline } from "react-icons/io5";
+import { SignOut } from './Login/SignOut';
 
 type MenuItem = Required<MenuProps>['items'][number];
 
@@ -48,6 +49,7 @@ export const Template2 = ({ children }: Template1Props) => {
   const [selectedKeys, setSelectedKeys] = useState([]);
   const {token: { colorBgContainer }} = theme.useToken();
   const [tema, setTema] = useState('#7e0c11');
+  const [isModalOpen, setIsModalOpen] = useState(false)
 
   useEffect(() => {
     setSelectedKeys([router.pathname]);
@@ -189,18 +191,12 @@ export const Template2 = ({ children }: Template1Props) => {
               <IoIosNotificationsOutline size={24} color='#fff'/>
             </div>
 
-            <Popconfirm
-              title="Deseja realmente sair?"
-              okText="Sim"
-              cancelText="Não"
-              placement="bottom"
-              onConfirm={() => console.log('sair')}
-              className='w-full'
-            >
-              <div className='h-[72px] items-center pl-2 pr-1 flex justify-center cursor-pointer hover:bg-[#1f1e1c] flex-1 rounded-md py-3 transition-all duration-300'>
+     
+              <div className='h-[72px] items-center pl-2 pr-1 flex justify-center cursor-pointer hover:bg-[#1f1e1c] flex-1 rounded-md py-3 transition-all duration-300'
+              onClick={() => setIsModalOpen(true)}
+              >
                 <IoExitOutline size={22} color="#fff" />
               </div>
-            </Popconfirm>
           </div>
         </Header>
 
@@ -287,6 +283,10 @@ export const Template2 = ({ children }: Template1Props) => {
           </Layout>
         </Layout>
       </Layout>
+      <SignOut
+        isModalOpen={isModalOpen}
+        setIsModalOpen={setIsModalOpen}
+      />
     </ProviderAntd>
   );
 };
